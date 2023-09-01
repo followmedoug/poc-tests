@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
     <nav
       style={{
@@ -49,10 +57,34 @@ const Navbar = () => {
           lineHeight: "16px",
           border: "none",
         }}
+        onClick={() => handleNavigate("/login")}
       >
         Entrar
       </button>
-      <button>Criar conta</button>
+      <button
+        style={{
+          display: "flex",
+          width: "126px",
+          height: "40px",
+          padding: "8px 32px",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "8px",
+          flexShrink: 0,
+          borderRadius: "30px",
+          border: "1px solid #BBB549",
+          color: "#FFF",
+          fontFamily: "Lato",
+          fontSize: "14px",
+          fontStyle: "normal",
+          fontWeight: 700,
+          lineHeight: "16px",
+          backgroundColor: "#000",
+        }}
+        onClick={() => handleNavigate("/register")}
+      >
+        Criar conta
+      </button>
     </nav>
   );
 };
