@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -17,7 +21,9 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div className='App'>
-      <Navbar />
+      <BrowserRouter>
+        <Navbar />
+      </BrowserRouter>
       <RouterProvider router={router} />
     </div>
   );
